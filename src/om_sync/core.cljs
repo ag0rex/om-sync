@@ -35,15 +35,15 @@
     [tag edn]))
 
 (defn om-sync
-  "ALPHA: Creates a reusable sync componet. Data must be a map containing
+  "ALPHA: Creates a reusable sync component. Data must be a map containing
   :url and :coll keys. :url must identify a server endpoint that can
-  takes EDN data via POST for create, PUT for update, and DELETE for
+  take EDN data via POST for create, PUT for update, and DELETE for
   delete. :coll must be a cursor into the application state. Note the
   first argument could of course just be a cursor itself.
 
   In order to function you must provide a subscribeable core.async
   channel that will stream all :tx-listen events. This channel must be
-  called :tx-chan and provided via the :share option to om.core/root. It
+  called :tx-chan and provided via the :shared option to om.core/root. It
   must be a channel constructed with cljs.core.async/pub with the topic
   :txs.
 
